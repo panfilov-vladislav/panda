@@ -1,23 +1,16 @@
 {
   "name": "panda",
-  "description": "",
-  "version": "0.0.0",
+  "description": "Panda is an app",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git://github.com/panfilov-vladislav/panda"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "derby": "0.5.x",
-    "express": "~3.2.5",
-    "redis": "~0.8.3",
-    "livedb-mongo": "~0.2.0",
-    "racer-browserchannel": "~0.1.0",
-    "connect-mongo": "~0.3.2",
-    "derby-passport": "~0.0.29",
-    "passport-yandex": "~0.0.2"
+
   },
   "engines": {
     "node": "0.10.x"

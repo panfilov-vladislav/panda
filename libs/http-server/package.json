@@ -1,0 +1,12 @@
+{
+    "name": "panda-http-server",
+    "description": "Http-server for Panda",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "~3.2.5"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "private": true
+}
