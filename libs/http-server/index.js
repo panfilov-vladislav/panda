@@ -10,12 +10,11 @@ var DEFAULT_OPTIONS = {
     port: 3000,
     staticPath: __dirname + '/public',
     https: {
-        cert: __dirname + '/ssl/flyfish-20120604.pem',
-        key:  __dirname + '/ssl/flyfish-20120604.key'
+        cert: __dirname + '/ssl/ssl.pem',
+        key:  __dirname + '/ssl/ssl.key'
     }
 };
 
-console.log('Current directory: ' + process.cwd());
 var expressApp = express();
 var isInitialized = false;
 
@@ -36,7 +35,7 @@ function init(options){
 
     expressApp.configure(function(){
         expressApp.use(express.compress());
-        expressApp.use(express.static(options.staticPath || DEFAULT_OPTIONS.staticPath));
+        expressApp.use(express.static(options.staticPath));
         expressApp.use(function(req,res){
             res.writeHead(404);
             res.end('404');
@@ -48,18 +47,14 @@ function init(options){
     exports.express = express;
     exports.expressApp = expressApp;
 
-    if (options.https){
-        try{
-            var key = fs.readFileSync(options.https.key);
-            var cert = fs.readFileSync(options.https.cert);
-            https.createServer({key: key, cert: cert}, expressApp).listen(options.port);
-        }
-        catch(e){
-            console.error(e);
-            process.exit(1);
-        }
+    try{
+        var key = fs.readFileSync(options.https.key);
+        var cert = fs.readFileSync(options.https.cert);
+        https.createServer({key: key, cert: cert}, expressApp).listen(options.port);
     }
-    else {
+    catch(e){
+        console.log('https server failed to start');
+        console.error(e);
         http.createServer(expressApp).listen(options.port);
     }
 
