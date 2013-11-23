@@ -1,7 +1,5 @@
+node_modules
 .DS_Store
 *.swp
-node_modules
 .idea
-*.key
-*.pem
 *.log
