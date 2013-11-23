@@ -4,4 +4,4 @@ node_modules
 .idea
 *.key
 *.pem
-
+*.log

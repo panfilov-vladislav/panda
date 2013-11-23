@@ -1,0 +1,12 @@
+{
+    "name": "panda-http-server",
+    "description": "Socket-server for Panda",
+    "version": "0.0.1",
+    "dependencies": {
+        "socket.io": "~0.9"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "private": true
+}

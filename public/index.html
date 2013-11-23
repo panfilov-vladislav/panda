@@ -4,9 +4,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="Robots" content="NONE">
         <title>Panda simple client</title>
+        <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
-
-    </body>
+        <script>
+            var socket = io.connect('https://localhost:3001');
+            socket.on('news', function (data) {
+                console.log(data);
+                socket.emit('my other event', { my: 'data' });
+            });
+        </script>
+     </body>
 </html>
 
