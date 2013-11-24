@@ -1,0 +1,12 @@
+{
+    "name": "panda-controller",
+    "description": "Server side controller for Panda",
+    "version": "0.0.1",
+    "dependencies": {
+
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "private": true
+}

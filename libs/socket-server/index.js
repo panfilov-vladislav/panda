@@ -15,7 +15,6 @@ var DEFAULT_OPTIONS = {
     }
 };
 
-
 var isInitialized = false;
 
 function use(extModules){ extModules;
@@ -51,7 +50,6 @@ function init(options){
     server.listen(options.port, options.host);
 
     socketIO.on('connection', function(socket){
-        console.log(socket);
         socket.on('event', function(data){});
         socket.on('disconnect', function(){});
     });
